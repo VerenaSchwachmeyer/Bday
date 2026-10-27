@@ -488,20 +488,44 @@
         object-position: center;
         background: #231828;
       }
-    
-      .bonus-stage { grid-template-columns: minmax(0, 1fr); max-width: 410px; margin-top: 0; }
-      .bonus-stage[hidden] { display: none; }
-      .event-illustration { object-fit: contain; background: #21162e; }
-      @media (max-width: 700px) { .bonus-stage { max-width: 420px; } }
-.event-illustration text { font-size: 15px; }
-.event-illustration .ticket-amount { font-size: 55px; }
+
+      .bonus-stage {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 410px;
+        margin-top: 0;
+      }
+      .bonus-stage[hidden] {
+        display: none;
+      }
+      .event-illustration {
+        object-fit: contain;
+        background: #21162e;
+      }
+      @media (max-width: 700px) {
+        .bonus-stage {
+          max-width: 420px;
+        }
+      }
+      .event-illustration text {
+        font-size: 15px;
+      }
+      .event-illustration .ticket-amount {
+        font-size: 55px;
+      }
 
       /* Alle drei Tore sind von Anfang an gleichwertig wählbar. */
-      .stage { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 1050px; gap: 24px; }
-      @media (max-width: 800px) {
-        .stage { grid-template-columns: minmax(0, 1fr); max-width: 420px; }
+      .stage {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-width: 1050px;
+        gap: 24px;
       }
-</style>
+      @media (max-width: 800px) {
+        .stage {
+          grid-template-columns: minmax(0, 1fr);
+          max-width: 420px;
+        }
+      }
+    </style>
   </head>
   <body>
     <main>
@@ -538,7 +562,7 @@
             <span class="serviceCardFront" aria-hidden="false"
               ><span class="star">✦</span><span class="door">Tor 1</span
               ><span class="rule"></span
-              ><span class="open-label">Tor1 öffnen ↗</span></span
+              ><span class="open-label">Tor 1 öffnen ↗</span></span
             >
             <span class="serviceCardBack" aria-hidden="true"
               ><img
@@ -582,36 +606,117 @@
             >
           </span>
         </button>
-      <button class="serviceFlipCard" type="button" aria-label="Tor 3 öffnen" aria-pressed="false">
+        <button
+          class="serviceFlipCard"
+          type="button"
+          aria-label="Tor 3 öffnen"
+          aria-pressed="false"
+        >
           <span class="serviceCard">
             <span class="serviceCardFront" aria-hidden="false">
               <span class="star">✦</span><span class="door">Tor 3</span>
-              <span class="rule"></span><span class="open-label">Tor 3 öffnen ↗</span>
+              <span class="rule"></span
+              ><span class="open-label">Tor 3 öffnen ↗</span>
             </span>
             <span class="serviceCardBack" aria-hidden="true">
-              <svg class="band-image event-illustration" viewBox="0 0 600 400" role="img" aria-labelledby="event-art-title" xmlns="http://www.w3.org/2000/svg">
-                <title id="event-art-title">Zwei goldene Eintrittskarten vor einer beleuchteten Bühne – Dein Event nach Wahl</title>
+              <svg
+                class="band-image event-illustration"
+                viewBox="0 0 600 400"
+                role="img"
+                aria-labelledby="event-art-title"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title id="event-art-title">
+                  Zwei goldene Eintrittskarten vor einer beleuchteten Bühne –
+                  Dein Event nach Wahl
+                </title>
                 <defs>
-                  <radialGradient id="event-glow"><stop stop-color="#794063"/><stop offset="1" stop-color="#21162e"/></radialGradient>
-                  <linearGradient id="ticket-gold" x2="1" y2="1"><stop stop-color="#ffe5a3"/><stop offset="1" stop-color="#d6a451"/></linearGradient>
+                  <radialGradient id="event-glow">
+                    <stop stop-color="#794063" />
+                    <stop offset="1" stop-color="#21162e" />
+                  </radialGradient>
+                  <linearGradient id="ticket-gold" x2="1" y2="1">
+                    <stop stop-color="#ffe5a3" />
+                    <stop offset="1" stop-color="#d6a451" />
+                  </linearGradient>
                 </defs>
-                <rect width="600" height="400" fill="url(#event-glow)"/>
-                <path d="M70 0 235 355 0 355ZM530 0 365 355 600 355Z" fill="#f7d58a" opacity=".07"/>
-                <g fill="#f7d58a"><path d="m92 102 5 14 15 5-15 5-5 14-5-14-15-5 15-5ZM497 240l5 14 15 5-15 5-5 14-5-14-15-5 15-5Z"/><circle cx="470" cy="84" r="4"/><circle cx="128" cy="298" r="4"/></g>
+                <rect width="600" height="400" fill="url(#event-glow)" />
+                <path
+                  d="M70 0 235 355 0 355ZM530 0 365 355 600 355Z"
+                  fill="#f7d58a"
+                  opacity=".07"
+                />
+                <g fill="#f7d58a">
+                  <path
+                    d="m92 102 5 14 15 5-15 5-5 14-5-14-15-5 15-5ZM497 240l5 14 15 5-15 5-5 14-5-14-15-5 15-5Z"
+                  />
+                  <circle cx="470" cy="84" r="4" />
+                  <circle cx="128" cy="298" r="4" />
+                </g>
                 <g transform="rotate(-12 300 190)">
-                  <path d="M132 94h330v52c-27 0-27 38 0 38v52H132v-52c27 0 27-38 0-38Z" fill="#9d3853" stroke="#f7d58a" stroke-width="2"/>
+                  <path
+                    d="M132 94h330v52c-27 0-27 38 0 38v52H132v-52c27 0 27-38 0-38Z"
+                    fill="#9d3853"
+                    stroke="#f7d58a"
+                    stroke-width="2"
+                  />
                 </g>
                 <g transform="rotate(8 300 220)">
-                  <path d="M110 150h380v58c-28 0-28 40 0 40v58H110v-58c28 0 28-40 0-40Z" fill="url(#ticket-gold)"/>
-                  <path d="M402 161v134" stroke="#7d4b39" stroke-width="2" stroke-dasharray="6 7"/>
-                  <text x="253" y="199" text-anchor="middle" fill="#4a2338" font-family="Arial, sans-serif" font-size="15" letter-spacing="4">DEIN EVENT</text>
-                  <text class="ticket-amount" x="253" y="261" text-anchor="middle" fill="#4a2338" font-family="Georgia, serif" font-size="55">200 €</text>
-                  <path d="m444 202 7 15 16 2-12 11 3 17-14-8-14 8 3-17-12-11 16-2Z" fill="#733048"/>
+                  <path
+                    d="M110 150h380v58c-28 0-28 40 0 40v58H110v-58c28 0 28-40 0-40Z"
+                    fill="url(#ticket-gold)"
+                  />
+                  <path
+                    d="M402 161v134"
+                    stroke="#7d4b39"
+                    stroke-width="2"
+                    stroke-dasharray="6 7"
+                  />
+                  <text
+                    x="253"
+                    y="199"
+                    text-anchor="middle"
+                    fill="#4a2338"
+                    font-family="Arial, sans-serif"
+                    font-size="15"
+                    letter-spacing="4"
+                  >
+                    DEIN EVENT
+                  </text>
+                  <text
+                    class="ticket-amount"
+                    x="253"
+                    y="261"
+                    text-anchor="middle"
+                    fill="#4a2338"
+                    font-family="Georgia, serif"
+                    font-size="55"
+                  >
+                    200 €
+                  </text>
+                  <path
+                    d="m444 202 7 15 16 2-12 11 3 17-14-8-14 8 3-17-12-11 16-2Z"
+                    fill="#733048"
+                  />
                 </g>
-                <text x="300" y="360" text-anchor="middle" fill="#f7d58a" font-family="Arial, sans-serif" font-size="13" letter-spacing="3">MUSIK · THEATER · COMEDY</text>
+                <text
+                  x="300"
+                  y="360"
+                  text-anchor="middle"
+                  fill="#f7d58a"
+                  font-family="Arial, sans-serif"
+                  font-size="13"
+                  letter-spacing="3"
+                >
+                  MUSIK · THEATER · COMEDY
+                </text>
               </svg>
-              <span class="concert"><span class="concert-text">Such Dir ein Event aus</span>
-                <span class="back-label">Noch einmal tippen · Tor 3 schließen</span></span>
+              <span class="concert"
+                ><span class="concert-text">Such Dir ein Event aus</span>
+                <span class="back-label"
+                  >Noch einmal tippen · Tor 3 schließen</span
+                ></span
+              >
             </span>
           </span>
         </button>
@@ -621,8 +726,6 @@
         der Tastatur: Tab zum Auswählen, Enter oder Leertaste zum Öffnen und
         Schließen.
       </p> -->
-      
-      
 
       <!-- <p class="footer">Heute bist du der Hauptgewinn. ✦</p> -->
       <details>
@@ -689,7 +792,7 @@
         if (soundStatus) soundStatus.textContent = message;
         soundButton.title = message;
       }
-      if (!soundStatus) soundButton.removeAttribute('aria-describedby');
+      if (!soundStatus) soundButton.removeAttribute("aria-describedby");
 
       let audioContext, musicBus, fxBus, noiseBuffer, soundTimer;
       let soundEnabled = false,
@@ -697,9 +800,47 @@
         nextStepTime = 0,
         stepNumber = 0;
       const stepLength = 60 / 96 / 2;
-      const melody = [74, 78, 81, 83, 81, 78, 76, 74, 79, null, 83, 86, 85, 83, 81, 79, 81, 85, 88, null, 86, 85, 83, 81, 78, 81, 86, 85, 83, 81, 76, 73];
-      const chords = [[62,66,69], [67,71,74], [69,73,76], [62,66,69]];
-      const bassNotes = [38,43,45,38];
+      const melody = [
+        74,
+        78,
+        81,
+        83,
+        81,
+        78,
+        76,
+        74,
+        79,
+        null,
+        83,
+        86,
+        85,
+        83,
+        81,
+        79,
+        81,
+        85,
+        88,
+        null,
+        86,
+        85,
+        83,
+        81,
+        78,
+        81,
+        86,
+        85,
+        83,
+        81,
+        76,
+        73,
+      ];
+      const chords = [
+        [62, 66, 69],
+        [67, 71, 74],
+        [69, 73, 76],
+        [62, 66, 69],
+      ];
+      const bassNotes = [38, 43, 45, 38];
       const hz = (note) => 440 * Math.pow(2, (note - 69) / 12);
 
       function initShowAudio() {
@@ -823,36 +964,51 @@
       }
 
       function playDoorGong() {
-        if (!soundEnabled || !audioContext || audioContext.state !== 'running') return;
-        const time = audioContext.currentTime + .01;
+        if (!soundEnabled || !audioContext || audioContext.state !== "running")
+          return;
+        const time = audioContext.currentTime + 0.01;
         const gongBus = audioContext.createGain();
         gongBus.connect(fxBus);
         // Original six-part gong, with a 25% longer decay and a quiet, short room tail.
         const hall = audioContext.createConvolver();
         const wet = audioContext.createGain();
-        const impulse = audioContext.createBuffer(1, Math.ceil(audioContext.sampleRate * .8), audioContext.sampleRate);
+        const impulse = audioContext.createBuffer(
+          1,
+          Math.ceil(audioContext.sampleRate * 0.8),
+          audioContext.sampleRate,
+        );
         const reflections = impulse.getChannelData(0);
         for (let i = 0; i < 48; i++) {
-          const delay = .018 + i * .014 + .002 * Math.sin(i * 2.3);
-          reflections[Math.round(delay * audioContext.sampleRate)] += Math.cos(i * 1.7) * .23 * Math.exp(-delay / .22);
+          const delay = 0.018 + i * 0.014 + 0.002 * Math.sin(i * 2.3);
+          reflections[Math.round(delay * audioContext.sampleRate)] +=
+            Math.cos(i * 1.7) * 0.23 * Math.exp(-delay / 0.22);
         }
         hall.normalize = false;
         hall.buffer = impulse;
-        wet.gain.value = .28;
+        wet.gain.value = 0.28;
         gongBus.connect(hall).connect(wet).connect(fxBus);
         [1, 1.43, 2.11, 2.74, 4.07, 5.31].forEach((partial, index) => {
           const oscillator = audioContext.createOscillator();
           const envelope = audioContext.createGain();
-          const duration = (1.8 - index * .16) * 1.25;
+          const duration = (1.8 - index * 0.16) * 1.25;
           oscillator.frequency.setValueAtTime(196 * partial, time);
-          oscillator.frequency.exponentialRampToValueAtTime(194 * partial, time + duration);
+          oscillator.frequency.exponentialRampToValueAtTime(
+            194 * partial,
+            time + duration,
+          );
           envelope.gain.setValueAtTime(0, time);
-          envelope.gain.linearRampToValueAtTime(.32 / (index + 1), time + .006);
-          envelope.gain.exponentialRampToValueAtTime(.0001, time + duration);
+          envelope.gain.linearRampToValueAtTime(
+            0.32 / (index + 1),
+            time + 0.006,
+          );
+          envelope.gain.exponentialRampToValueAtTime(0.0001, time + duration);
           oscillator.connect(envelope).connect(gongBus);
           oscillator.start(time);
-          oscillator.stop(time + duration + .02);
-          oscillator.onended = () => { oscillator.disconnect(); envelope.disconnect(); };
+          oscillator.stop(time + duration + 0.02);
+          oscillator.onended = () => {
+            oscillator.disconnect();
+            envelope.disconnect();
+          };
         });
         // Disconnect the shared effect after the longest note and its reverb end.
         const cleanup = audioContext.createConstantSource();
@@ -862,24 +1018,27 @@
         cleanup.start(time);
         cleanup.stop(time + 3.1);
         cleanup.onended = () => {
-          gongBus.disconnect(); hall.disconnect(); wet.disconnect(); cleanup.disconnect(); silence.disconnect();
+          gongBus.disconnect();
+          hall.disconnect();
+          wet.disconnect();
+          cleanup.disconnect();
+          silence.disconnect();
         };
         musicBus.gain.cancelScheduledValues(time);
-        musicBus.gain.setValueAtTime(.16, time);
-        musicBus.gain.linearRampToValueAtTime(.36, time + 1.2);
+        musicBus.gain.setValueAtTime(0.16, time);
+        musicBus.gain.linearRampToValueAtTime(0.36, time + 1.2);
       }
-
-
-
 
       function updateSoundControls() {
         soundButton.setAttribute("aria-pressed", String(soundEnabled));
         soundButton.textContent = soundEnabled
           ? "♫ Ton ausschalten"
           : "♫ Show starten";
-        setSoundStatus(soundEnabled
-          ? "Showmusik läuft · Gong beim Öffnen eines Tors"
-          : "10 Sekunden Gameshow im Loop · komplett synthetisch");
+        setSoundStatus(
+          soundEnabled
+            ? "Showmusik läuft · Gong beim Öffnen eines Tors"
+            : "10 Sekunden Gameshow im Loop · komplett synthetisch",
+        );
       }
 
       function stopShowAudio() {
@@ -903,7 +1062,9 @@
           await audioContext.resume();
           if (document.hidden || audioContext.state !== "running") {
             stopShowAudio();
-            setSoundStatus("Bitte die Show erneut starten, um den Ton zu aktivieren.");
+            setSoundStatus(
+              "Bitte die Show erneut starten, um den Ton zu aktivieren.",
+            );
             return;
           }
           soundEnabled = true;
@@ -913,7 +1074,9 @@
           updateSoundControls();
         } catch (error) {
           stopShowAudio();
-          setSoundStatus("Ton konnte nicht gestartet werden. Bitte erneut versuchen.");
+          setSoundStatus(
+            "Ton konnte nicht gestartet werden. Bitte erneut versuchen.",
+          );
         } finally {
           soundBusy = false;
         }
@@ -924,27 +1087,34 @@
       });
       window.addEventListener("pagehide", stopShowAudio);
 
-      const doors = [...document.querySelectorAll('.serviceFlipCard')];
+      const doors = [...document.querySelectorAll(".serviceFlipCard")];
 
       function setDoorState(card, index, open) {
-        card.setAttribute('aria-pressed', String(open));
-        card.querySelector('.serviceCardFront').setAttribute('aria-hidden', String(open));
-        card.querySelector('.serviceCardBack').setAttribute('aria-hidden', String(!open));
-        const concert = card.querySelector('.concert-text').textContent;
-        card.setAttribute('aria-label', open
-          ? concert + '. Tor ' + (index + 1) + ' schließen'
-          : 'Tor ' + (index + 1) + ' öffnen');
+        card.setAttribute("aria-pressed", String(open));
+        card
+          .querySelector(".serviceCardFront")
+          .setAttribute("aria-hidden", String(open));
+        card
+          .querySelector(".serviceCardBack")
+          .setAttribute("aria-hidden", String(!open));
+        const concert = card.querySelector(".concert-text").textContent;
+        card.setAttribute(
+          "aria-label",
+          open
+            ? concert + ". Tor " + (index + 1) + " schließen"
+            : "Tor " + (index + 1) + " öffnen",
+        );
       }
 
       doors.forEach((card, index) => {
-        card.addEventListener('click', () => {
-          const open = card.getAttribute('aria-pressed') !== 'true';
+        card.addEventListener("click", () => {
+          const open = card.getAttribute("aria-pressed") !== "true";
           if (open) playDoorGong();
           doors.forEach((door, doorIndex) => {
             setDoorState(door, doorIndex, door === card && open);
           });
         });
       });
-</script>
+    </script>
   </body>
 </html>
